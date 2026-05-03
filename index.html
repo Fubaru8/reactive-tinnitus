@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReactiveTinnitus.org — Awareness, Education & Support</title>
+  <meta name="description" content="ReactiveTinnitus.org raises awareness about Reactive Tinnitus, Hyperacusis, and Noxacusis — conditions that demand sound protection and rest to prevent permanent auditory damage." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Code+Pro:wght@300;400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-rt">RT</span>
+        <span class="logo-text">ReactiveTinnitus<span class="logo-org">.org</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#understanding">Understanding</a></li>
+        <li><a href="#threshold">Threshold</a></li>
+        <li><a href="#consequences">Consequences</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <canvas id="waveCanvas"></canvas>
+      <div class="hero-noise"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">Awareness &amp; Education</div>
+      <h1 class="hero-title">
+        Reactive Tinnitus,<br />
+        <em>Hyperacusis</em> &amp; Noxacusis
+      </h1>
+      <p class="hero-subtitle">
+        Staying Below Sound Tolerance Is Key
+      </p>
+      <p class="hero-lead">
+        When the auditory system is never given the quiet it needs, the cycle of injury becomes self-reinforcing — and the path to recovery narrows with every passing day.
+      </p>
+      <div class="hero-actions">
+        <a href="#understanding" class="btn btn-primary">Understand the Condition</a>
+        <a href="#resources" class="btn btn-ghost">Find Support</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" id="scrollHint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- WHAT IS -->
+  <section class="section section-dark" id="about">
+    <div class="container">
+      <div class="section-label">What Is</div>
+      <h2 class="section-title">Reactive Tinnitus</h2>
+      <div class="cards-trio">
+        <div class="card card-glow" data-animate>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 14C24 14 16 10 8 24C16 38 24 34 24 34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M24 14C24 14 32 10 40 24C32 38 24 34 24 34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3>Reactive Tinnitus</h3>
+          <p>Tinnitus that changes — grows louder, shifts in pitch, or spikes — directly in response to sound exposure. Unlike stable tinnitus, reactive tinnitus signals an auditory system under ongoing stress.</p>
+        </div>
+        <div class="card card-glow" data-animate>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 24 Q12 14 18 24 Q24 34 30 24 Q36 14 42 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M6 34 Q12 24 18 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5" fill="none"/>
+              <path d="M30 34 Q36 24 42 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5" fill="none"/>
+            </svg>
+          </div>
+          <h3>Hyperacusis</h3>
+          <p>A collapsed tolerance to everyday sounds. Ordinary noises — conversation, traffic, running water — become painfully loud, intrusive, or physically distressing to those affected.</p>
+        </div>
+        <div class="card card-glow" data-animate>
+          <div class="card-icon">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 8 L24 40" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M14 16 Q24 8 34 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <path d="M10 28 Q24 18 38 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle cx="24" cy="40" r="3" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Noxacusis</h3>
+          <p>The most severe form — sound causes actual physical pain. Burning, stabbing, or electric sensations triggered by noise. Even internal sounds like chewing or speaking can become agonizing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT: THE SCIENCE -->
+  <section class="section section-mid" id="understanding">
+    <div class="container container-narrow">
+      <div class="section-label">The Science</div>
+      <h2 class="section-title">Why Sound Rest Matters</h2>
+
+      <div class="prose-block" data-animate>
+        <div class="prose-marker">01</div>
+        <div class="prose-content">
+          <h3>The Overstimulated Auditory System</h3>
+          <p>
+            If someone has Reactive Tinnitus, Hyperacusis, and Noxacusis but is never in an environment quiet enough to fall below their sound intolerance threshold, the auditory system remains in a <strong>constant state of overstimulation</strong>. The inner ear and auditory nerves are forced to process sound that is already beyond what the system can handle, so the brain and auditory pathways stay hyper-excited. This prevents any period of rest or recovery, allowing abnormal firing patterns and central gain mechanisms to become more deeply entrenched.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose-block" data-animate>
+        <div class="prose-marker">02</div>
+        <div class="prose-content">
+          <h3>Peripheral &amp; Central Sensitization</h3>
+          <p>
+            Over time, this unrelenting exposure leads to both peripheral and central sensitization. On the peripheral side, damaged or irritated auditory nerves become more reactive. Centrally, the brain begins to expect pain or reactivity even from moderate or everyday sounds. This mirrors chronic pain conditions in the body, where pathways are reinforced until the system reacts automatically with distress and pain. Prolonged overstimulation can also contribute to <em>oxidative stress, excitotoxicity, and inflammation</em>, further weakening already vulnerable auditory structures.
+          </p>
+        </div>
+      </div>
+
+      <div class="prose-block" data-animate>
+        <div class="prose-marker">03</div>
+        <div class="prose-content">
+          <h3>Worsening Symptoms Over Time</h3>
+          <p>
+            Symptomatically, this appears as tinnitus that grows louder, more complex, and increasingly reactive to sound. New tones may develop, and the baseline loudness may rise permanently rather than only fluctuating in temporary spikes. Hyperacusis worsens as ordinary sounds feel sharper, more piercing, and less tolerable. Noxacusis may progress into burning, stabbing, or electric pain from even small amounts of sound. In severe cases, the reactivity may extend to the body's own internal sounds, such as chewing, swallowing, or even speaking, creating the sense that the auditory system is under attack from every direction.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THRESHOLD DIAGRAM -->
+  <section class="section section-dark" id="threshold">
+    <div class="container">
+      <div class="section-label">The Core Principle</div>
+      <h2 class="section-title">The Tolerance Threshold</h2>
+      <p class="section-intro">The single most important factor in preventing further damage is staying consistently below your personal sound tolerance threshold — giving the auditory system the quiet it needs to begin recovery.</p>
+
+      <div class="threshold-diagram" data-animate>
+        <div class="threshold-chart">
+          <div class="threshold-line threshold-line-danger">
+            <span class="threshold-line-label">Pain / Noxacusis Threshold</span>
+          </div>
+          <div class="threshold-line threshold-line-warning">
+            <span class="threshold-line-label">Hyperacusis Tolerance Threshold</span>
+          </div>
+          <div class="threshold-line threshold-line-safe">
+            <span class="threshold-line-label">Safe Zone — Recovery Possible</span>
+          </div>
+          <div class="threshold-bars">
+            <div class="t-bar-wrap">
+              <div class="t-bar t-bar-bad" style="--h: 92%">
+                <span class="t-bar-label">No Rest<br/><small>Worsening</small></span>
+              </div>
+            </div>
+            <div class="t-bar-wrap">
+              <div class="t-bar t-bar-bad" style="--h: 85%">
+                <span class="t-bar-label">Loud Env.<br/><small>Damaging</small></span>
+              </div>
+            </div>
+            <div class="t-bar-wrap">
+              <div class="t-bar t-bar-mid" style="--h: 58%">
+                <span class="t-bar-label">Moderate<br/><small>Risky</small></span>
+              </div>
+            </div>
+            <div class="t-bar-wrap">
+              <div class="t-bar t-bar-good" style="--h: 28%">
+                <span class="t-bar-label">Sound Rest<br/><small>Recovery</small></span>
+              </div>
+            </div>
+            <div class="t-bar-wrap">
+              <div class="t-bar t-bar-good" style="--h: 15%">
+                <span class="t-bar-label">Quiet Env.<br/><small>Best Case</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="threshold-key">
+          <div class="key-item"><span class="key-dot key-danger"></span> Pain / Injury Zone</div>
+          <div class="key-item"><span class="key-dot key-warning"></span> Tolerance Threshold</div>
+          <div class="key-item"><span class="key-dot key-safe"></span> Safe Recovery Zone</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSEQUENCES -->
+  <section class="section section-mid" id="consequences">
+    <div class="container">
+      <div class="section-label">If Left Unchecked</div>
+      <h2 class="section-title">The Human Cost</h2>
+
+      <div class="two-col">
+        <div class="col-block" data-animate>
+          <h3 class="col-block-title col-title-medical">Medical Consequences</h3>
+          <ul class="impact-list">
+            <li>
+              <span class="impact-icon impact-red">⬆</span>
+              <div>
+                <strong>Permanently elevated tinnitus baseline</strong>
+                <p>Baseline loudness rises and does not return to prior levels, even with eventual rest.</p>
+              </div>
+            </li>
+            <li>
+              <span class="impact-icon impact-red">↗</span>
+              <div>
+                <strong>Progressive sound intolerance</strong>
+                <p>Hyperacusis deepens; sounds once tolerable become intolerable over time.</p>
+              </div>
+            </li>
+            <li>
+              <span class="impact-icon impact-red">⚡</span>
+              <div>
+                <strong>Escalating ear pain</strong>
+                <p>Noxacusis can progress to pain triggered by one's own voice, chewing, or swallowing.</p>
+              </div>
+            </li>
+            <li>
+              <span class="impact-icon impact-red">⚠</span>
+              <div>
+                <strong>Risk of permanent damage</strong>
+                <p>Ongoing oxidative stress and excitotoxicity can cause irreversible auditory nerve injury.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-block" data-animate>
+          <h3 class="col-block-title col-title-human">Human Consequences</h3>
+          <ul class="impact-list">
+            <li>
+              <span class="impact-icon impact-amber">⌂</span>
+              <div>
+                <strong>Becoming homebound</strong>
+                <p>The psychological and functional toll may confine people to home, unable to tolerate social environments.</p>
+              </div>
+            </li>
+            <li>
+              <span class="impact-icon impact-amber">↺</span>
+              <div>
+                <strong>Anticipatory anxiety</strong>
+                <p>Fear of sound exposure creates a self-reinforcing loop of anxiety, avoidance, and worsening sensitivity.</p>
+              </div>
+            </li>
+            <li>
+              <span class="impact-icon impact-amber">▽</span>
+              <div>
+                <strong>Loss of coping buffer</strong>
+                <p>Without the auditory system ever resetting, even marginal tolerance disappears entirely.</p>
+              </div>
+            </li>
+            <li>
+              <span class="impact-icon impact-amber">↯</span>
+              <div>
+                <strong>Chronic injury cycle</strong>
+                <p>Without adequate rest, the system remains locked in a pattern of overactivation and injury, compounding daily.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <blockquote class="pull-quote" data-animate>
+        "Without access to an environment quieter than their tolerance, the auditory system remains locked in a pattern of chronic injury and overactivation — resulting in progressively worsening tinnitus, deepening sound intolerance, escalating ear pain, and the risk of permanent damage."
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- RESOURCES -->
+  <section class="section section-dark" id="resources">
+    <div class="container">
+      <div class="section-label">You Are Not Alone</div>
+      <h2 class="section-title">Resources &amp; Support</h2>
+      <p class="section-intro">Finding knowledgeable support is critical. These communities and organizations have helped many people navigate life with reactive tinnitus, hyperacusis, and noxacusis.</p>
+
+      <div class="resources-grid">
+        <a href="https://www.hyperacusisresearch.org" target="_blank" rel="noopener" class="resource-card" data-animate>
+          <div class="resource-card-top">
+            <span class="resource-tag">Research</span>
+          </div>
+          <h3>Hyperacusis Research</h3>
+          <p>Funds scientific research into the mechanisms of hyperacusis and noxacusis. A key organization advancing understanding of these conditions.</p>
+          <span class="resource-link">hyperacusisresearch.org →</span>
+        </a>
+        <a href="https://www.ata.org" target="_blank" rel="noopener" class="resource-card" data-animate>
+          <div class="resource-card-top">
+            <span class="resource-tag">Advocacy</span>
+          </div>
+          <h3>American Tinnitus Association</h3>
+          <p>Provides support, advocacy, and funding for tinnitus research. Connects people with audiologists and treatment resources.</p>
+          <span class="resource-link">ata.org →</span>
+        </a>
+        <a href="https://www.reddit.com/r/hyperacusis/" target="_blank" rel="noopener" class="resource-card" data-animate>
+          <div class="resource-card-top">
+            <span class="resource-tag">Community</span>
+          </div>
+          <h3>r/Hyperacusis</h3>
+          <p>An active community of people living with hyperacusis and noxacusis sharing experiences, strategies, and support.</p>
+          <span class="resource-link">reddit.com/r/hyperacusis →</span>
+        </a>
+        <a href="https://www.reddit.com/r/tinnitus/" target="_blank" rel="noopener" class="resource-card" data-animate>
+          <div class="resource-card-top">
+            <span class="resource-tag">Community</span>
+          </div>
+          <h3>r/Tinnitus</h3>
+          <p>One of the largest online communities for tinnitus sufferers, including many dealing with reactive forms of the condition.</p>
+          <span class="resource-link">reddit.com/r/tinnitus →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROTECT YOUR HEARING -->
+  <section class="section section-cta">
+    <div class="container container-narrow">
+      <div class="cta-block" data-animate>
+        <div class="cta-wave-left"></div>
+        <div class="cta-wave-right"></div>
+        <div class="section-label">Take Action</div>
+        <h2>Protect Your Auditory System</h2>
+        <p>If you suspect you have reactive tinnitus, hyperacusis, or noxacusis, the most important step you can take today is reducing your sound exposure. Seek a qualified audiologist experienced in hyperacusis and begin protecting your hearing environment.</p>
+        <div class="cta-steps">
+          <div class="cta-step">
+            <span class="cta-step-num">1</span>
+            <p>Reduce all unnecessary sound exposure immediately</p>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-num">2</span>
+            <p>Use hearing protection in unavoidable noisy environments</p>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-num">3</span>
+            <p>Seek a specialist experienced in hyperacusis — not all audiologists are familiar with these conditions</p>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-num">4</span>
+            <p>Connect with the community — you are not alone</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-rt">RT</span>
+            <span class="logo-text">ReactiveTinnitus<span class="logo-org">.org</span></span>
+          </a>
+          <p class="footer-tagline">Raising awareness for those living with reactive tinnitus, hyperacusis, and noxacusis.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About the Conditions</a></li>
+            <li><a href="#understanding">The Science</a></li>
+            <li><a href="#threshold">Tolerance Threshold</a></li>
+            <li><a href="#consequences">Human Cost</a></li>
+            <li><a href="#resources">Resources</a></li>
+          </ul>
+        </div>
+        <div class="footer-disclaimer">
+          <h4>Medical Disclaimer</h4>
+          <p>This website is for educational and awareness purposes only. It does not constitute medical advice. Always consult a qualified healthcare professional for diagnosis and treatment of any medical condition.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 ReactiveTinnitus.org — All rights reserved. Built to raise awareness.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

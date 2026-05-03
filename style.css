@@ -775,6 +775,141 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.6;
 }
 
+/* --- TREATMENT SECTION --- */
+.treatment-intro {
+  margin-bottom: 2.5rem;
+}
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.treatment-card {
+  background: var(--navy-mid);
+  border-radius: 8px;
+  padding: 1.75rem;
+  border: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+.treatment-card-caution {
+  border-top: 3px solid var(--amber-dim);
+}
+.treatment-card:hover {
+  border-color: var(--amber);
+}
+
+.treatment-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.treatment-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--white-dim);
+  text-transform: uppercase;
+}
+
+.treatment-verdict {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 2rem;
+  white-space: nowrap;
+}
+.verdict-caution {
+  color: var(--amber);
+  border: 1px solid var(--amber-dim);
+  background: rgba(244, 169, 66, 0.07);
+}
+
+.treatment-card > p {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.treatment-warning {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: rgba(224, 85, 85, 0.06);
+  border: 1px solid rgba(224, 85, 85, 0.2);
+  border-radius: 6px;
+  padding: 1rem;
+}
+.treatment-warning-icon {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  color: var(--red-signal);
+  margin-top: 0.05rem;
+}
+.treatment-warning p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.treatment-statement {
+  display: grid;
+  grid-template-columns: 4px 1fr;
+  gap: 2rem;
+  background: var(--navy-mid);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  align-items: stretch;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.treatment-statement.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.treatment-statement-bar {
+  background: linear-gradient(to bottom, var(--teal), var(--amber-dim));
+  border-radius: 4px;
+  align-self: stretch;
+}
+
+.treatment-statement-body h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  color: var(--white);
+}
+.treatment-statement-body p {
+  font-size: 0.97rem;
+  color: var(--text-body);
+  line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+  .treatment-grid {
+    grid-template-columns: 1fr;
+  }
+  .treatment-statement {
+    grid-template-columns: 1fr;
+  }
+  .treatment-statement-bar {
+    height: 4px;
+    width: 100%;
+  }
+}
+
 /* --- FOOTER --- */
 .site-footer {
   background: #03080f;
@@ -836,6 +971,72 @@ p:last-child { margin-bottom: 0; }
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.4; transform: scaleY(1); }
   50%       { opacity: 1;   transform: scaleY(1.2); }
+}
+
+/* --- DISCORD NAV BUTTON --- */
+.discord-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(88, 101, 242, 0.15);
+  border: 1px solid rgba(88, 101, 242, 0.4);
+  border-radius: 6px;
+  padding: 0.45rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  white-space: nowrap;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+  flex-shrink: 0;
+}
+.discord-btn:hover {
+  background: rgba(88, 101, 242, 0.3);
+  border-color: rgba(88, 101, 242, 0.7);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.discord-icon {
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  flex-shrink: 0;
+}
+.discord-text {
+  color: #fff;
+}
+
+/* Discord resource card */
+.resource-card-discord {
+  border-top: 2px solid rgba(88, 101, 242, 0.5);
+}
+.resource-card-discord:hover {
+  border-color: rgba(88, 101, 242, 0.9);
+  box-shadow: 0 12px 32px rgba(88, 101, 242, 0.12);
+}
+.resource-card-discord .resource-tag {
+  color: #7289da;
+  border-color: rgba(88, 101, 242, 0.4);
+}
+.resource-card-discord .resource-link {
+  color: #7289da;
+}
+.resource-discord-icon {
+  width: 18px;
+  height: 18px;
+  color: #7289da;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  display: inline-block;
+}
+.resource-card-discord h3 {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .discord-btn { display: none; }
 }
 
 /* --- ANIMATE ON SCROLL --- */

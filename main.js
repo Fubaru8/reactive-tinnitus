@@ -190,7 +190,7 @@
    4. INTERSECTION OBSERVER — animate on scroll
    ============================================= */
 (function initScrollAnimations() {
-  const targets = document.querySelectorAll('[data-animate], .prose-block, .threshold-diagram, .col-block, .pull-quote, .resource-card, .cta-block');
+  const targets = document.querySelectorAll('[data-animate], .prose-block, .threshold-diagram, .col-block, .pull-quote, .resource-card, .cta-block, .treatment-statement');
 
   if (!('IntersectionObserver' in window)) {
     // Fallback: show everything

@@ -953,6 +953,22 @@ p:last-child { margin-bottom: 0; }
   margin-top: 1rem;
   line-height: 1.7;
 }
+.footer-founder {
+  font-size: 0.92rem;
+  color: rgba(200, 195, 188, 0.75);
+  margin-top: 0.8rem;
+  font-style: italic;
+}
+.footer-founder-link {
+  color: var(--teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(46, 196, 182, 0.35);
+  transition: color 0.2s, border-color 0.2s;
+}
+.footer-founder-link:hover {
+  color: var(--white);
+  border-bottom-color: var(--teal);
+}
 .footer-links h4,
 .footer-disclaimer h4 {
   font-family: var(--font-mono);

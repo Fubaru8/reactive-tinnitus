@@ -707,44 +707,30 @@ p:last-child { margin-bottom: 0; }
 
 .protection-video-wrap { margin-bottom: 4rem; }
 
-.video-card {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  background: var(--navy-mid);
-  border: 1px solid var(--border);
+.video-embed-vertical {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 16;
   border-radius: 8px;
-  padding: 1.5rem;
-  text-decoration: none;
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--navy-mid);
 }
-.video-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 12px 32px rgba(46, 196, 182, 0.1);
-  transform: translateY(-3px);
+.video-embed-vertical iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
-.video-card-play {
-  flex: 0 0 auto;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--teal);
-  color: var(--navy-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-}
-.video-card-body h4 {
-  font-size: 1.05rem;
-  color: var(--white);
-  margin: 0.4rem 0 0.3rem;
-}
-.video-card-body p {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--teal);
-  margin-bottom: 0;
+
+.protection-video-caption {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-body);
+  margin-top: 1rem;
 }
 
 .helmet-spotlight {
@@ -801,18 +787,17 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 0.6rem;
 }
 .contact-card p { font-size: 0.9rem; margin-bottom: 1rem; }
-.contact-email-btn {
-  display: inline-block;
+.contact-email-text {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  color: var(--navy-deep);
-  background: var(--teal);
-  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  color: var(--white);
+  background: var(--navy-deep);
+  border: 1px dashed var(--teal-dim);
   border-radius: 4px;
-  transition: background 0.2s, transform 0.2s;
+  padding: 0.6rem 1rem;
+  display: inline-block;
 }
-.contact-email-btn:hover { background: var(--white); color: var(--navy-deep); transform: translateY(-2px); }
+.contact-email-text a { color: var(--teal); }
 
 @media (max-width: 720px) {
   .helmet-spotlight { grid-template-columns: 1fr; padding: 1.75rem; }
